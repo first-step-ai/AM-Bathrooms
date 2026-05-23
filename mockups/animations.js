@@ -181,7 +181,7 @@
         '<svg width="18" height="18" viewBox="0 0 18 18"><line x1="1" y1="1" x2="17" y2="17"/><line x1="17" y1="1" x2="1" y2="17"/></svg>'+
       '</button>'+
       '<nav class="menu-nav">'+
-        '<a href="hero-b-cream-editorial.html">Home</a>'+
+        '<a href="index.html">Home</a>'+
         '<a href="projects.html">Projects</a>'+
         '<a href="about.html">About</a>'+
         '<a href="services.html">Services</a>'+
@@ -198,7 +198,7 @@
     document.body.appendChild(panel);
 
     // Mark current page
-    var page=window.location.pathname.split('/').pop()||'hero-b-cream-editorial.html';
+    var page=window.location.pathname.split('/').pop()||'index.html';
     panel.querySelectorAll('.menu-nav a').forEach(function(a){
       if(a.getAttribute('href')===page) a.classList.add('active');
     });
