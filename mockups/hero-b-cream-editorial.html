@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AM Bathrooms + Projects | Bathroom, Kitchen & Full Interior Renovations Sydney</title>
+<meta name="description" content="AM Bathrooms + Projects designs and builds bathroom, kitchen, laundry and full interior renovations across Sydney. One team, every detail, start to finish. HIA award-winning." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('am')</script>
+<link rel="stylesheet" href="animations.css">
+<style>
+:root{
+  --bg: #f5f2ed;
+  --bg-2: #f8f5f0;
+  --surface: #faf8f4;
+  --surface-alt: #ece6dc;
+  --ink: #1f1d1a;
+  --ink-muted: #6e6862;
+  --ink-faint: #a39c92;
+  --line: #e0d9cc;
+  --line-soft: #ebe5d8;
+  --accent: #7a5a3a;
+  --brass: #a18553;
+  --brass-soft: #c8a684;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"kern" 1,"liga" 1,"ss01" 1;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 1 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;
+}
+body > * { position: relative; z-index: 2 }
+a{color:inherit;text-decoration:none}
+
+/* Navbar */
+.nav{
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  padding:32px 96px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.brand .mark{
+  font-family:'Inter',sans-serif;font-weight:300;font-size:34px;letter-spacing:.18em;
+  color:var(--ink);line-height:1;
+}
+.brand .wm{
+  font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;
+  color:var(--ink-muted);margin-top:8px;text-transform:uppercase;
+}
+.hamburger{
+  width:48px;height:48px;border:1px solid var(--line);background:transparent;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:2px;
+  transition:all .25s ease-out;
+}
+.hamburger:hover{background:var(--ink);border-color:var(--ink)}
+.hamburger:hover span{background:var(--bg)}
+.hamburger span{display:block;width:18px;height:1px;background:var(--ink);transition:background .25s ease-out}
+
+/* Hero */
+.hero{
+  padding:72px 96px 104px;
+  display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;
+  min-height:calc(86vh - 130px);
+}
+.hero-text{max-width:580px}
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:40px;
+  display:flex;align-items:center;gap:16px;
+}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:200;letter-spacing:-.035em;
+  font-size:104px;line-height:1.02;color:var(--ink);
+  margin-bottom:40px;
+}
+.hero h1 span{display:block}
+.hero h1 em{font-style:italic;font-weight:200;color:var(--accent)}
+.hero p.sub{
+  font-family:'Inter',sans-serif;font-size:18px;font-weight:400;color:var(--ink-muted);
+  max-width:480px;margin-bottom:48px;line-height:1.7;
+}
+.cta-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.btn{
+  font-family:'Inter',sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;
+  padding:20px 36px;border-radius:1px;cursor:pointer;transition:all .3s ease-out;
+  text-transform:uppercase;display:inline-flex;align-items:center;gap:14px;
+}
+.btn-primary{background:var(--ink);color:var(--bg);border:1px solid var(--ink)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:20px 32px}
+.btn-secondary:hover{background:var(--ink);color:var(--bg)}
+.btn .arrow{font-size:15px;transition:transform .25s ease-out}
+.btn:hover .arrow{transform:translateX(4px)}
+
+.hero-photo{
+  height:620px;border-radius:1px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(241,235,225,.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(122,90,58,.18) 0%, transparent 60%),
+    linear-gradient(135deg, #d4c8b8 0%, #b8a890 50%, #9c8870 100%);
+}
+.hero-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(31,29,26,.25) 100%);
+}
+.hero-photo .photo-label{
+  position:absolute;bottom:28px;left:32px;color:var(--bg);
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
+  text-transform:uppercase;opacity:.5;z-index:2;
+}
+.hero-photo .scroll-hint{
+  position:absolute;bottom:32px;right:32px;color:var(--bg);
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
+  text-transform:uppercase;opacity:.6;z-index:2;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-photo .scroll-hint::after{content:'';width:24px;height:1px;background:var(--bg);opacity:.5}
+
+/* Trust bar */
+.trust{
+  background:var(--surface-alt);
+  padding:56px 96px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  perspective:1200px;overflow:hidden;
+}
+.trust-flipper{
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+}
+.trust-flipper.flipped{transform:rotateX(180deg)}
+.trust-face{
+  backface-visibility:hidden;
+  background:var(--surface-alt);
+}
+.trust-front{
+  display:flex;align-items:center;justify-content:center;
+}
+.trust-back{
+  position:absolute;inset:0;
+  transform:rotateX(180deg);
+  display:flex;align-items:center;justify-content:center;
+}
+.awards{display:flex;gap:40px;align-items:center}
+.award-badge{
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ink);
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+}
+.award-badge .year{font-family:'Inter',sans-serif;font-weight:200;font-size:26px;letter-spacing:-.02em;color:var(--accent);text-transform:none}
+.quote{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:300;font-size:21px;
+  color:var(--ink);line-height:1.55;letter-spacing:-.005em;
+  max-width:640px;text-align:center;
+}
+.quote .stars{color:var(--brass);letter-spacing:.18em;font-style:normal;font-size:13px;display:block;margin-bottom:10px;font-family:'Inter',sans-serif}
+.quote .who{display:block;margin-top:14px;font-style:normal;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-muted)}
+
+/* How it works */
+.how{padding:144px 96px;background:var(--bg)}
+.how-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:96px;align-items:end}
+.how .section-eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;
+}
+.how .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+.how h2{
+  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
+  color:var(--ink);line-height:1;
+}
+.how h2 em{font-style:italic;color:var(--accent);font-weight:200}
+.how p.lead{
+  font-size:17px;color:var(--ink-muted);max-width:480px;line-height:1.7;
+}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:64px}
+.step{position:relative}
+.step .num{
+  font-family:'Inter',sans-serif;font-weight:200;font-style:italic;font-size:84px;
+  color:var(--accent);line-height:1;margin-bottom:32px;letter-spacing:-.04em;
+}
+.step h3{
+  font-family:'Inter',sans-serif;font-size:22px;font-weight:400;margin-bottom:16px;
+  letter-spacing:-.012em;color:var(--ink);
+}
+.step p{color:var(--ink-muted);font-size:15px;line-height:1.7}
+.step:not(:last-child)::after{
+  content:'';position:absolute;top:38px;right:-32px;width:1px;height:48px;background:var(--line);
+}
+
+/* Featured Projects */
+.featured{padding:144px 96px;background:var(--bg)}
+.featured-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:80px;align-items:end}
+.featured .section-eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;
+}
+.featured .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+.featured h2{
+  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
+  color:var(--ink);line-height:1;
+}
+.featured h2 em{font-style:italic;color:var(--accent);font-weight:200}
+.featured p.lead{font-size:17px;color:var(--ink-muted);max-width:480px;line-height:1.7}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.project-card{cursor:pointer;display:block}
+.project-image{
+  position:relative;overflow:hidden;border-radius:1px;
+  aspect-ratio:3/4;margin-bottom:24px;
+  transition:transform .5s ease-out;
+}
+.project-image.p1{background:
+  radial-gradient(ellipse at 30% 30%, rgba(241,235,225,.35) 0%, transparent 50%),
+  linear-gradient(135deg, #d4c8b8 0%, #b0987a 60%, #8a6f50 100%);
+}
+.project-image.p2{background:
+  radial-gradient(ellipse at 60% 20%, rgba(241,235,225,.3) 0%, transparent 50%),
+  linear-gradient(160deg, #c4bcaf 0%, #998c7a 60%, #6e6356 100%);
+}
+.project-image.p3{background:
+  radial-gradient(ellipse at 40% 40%, rgba(241,235,225,.35) 0%, transparent 50%),
+  linear-gradient(150deg, #cabba8 0%, #a89478 50%, #7a6648 100%);
+}
+.project-image::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(31,29,26,.35) 100%);
+}
+.project-card:hover .project-image{transform:translateY(-8px)}
+.project-meta{
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.32em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:12px;
+}
+.project-name{
+  font-family:'Inter',sans-serif;font-size:24px;font-weight:300;letter-spacing:-.015em;
+  color:var(--ink);transition:color .25s ease-out;line-height:1.3;
+}
+.project-card:hover .project-name{color:var(--accent)}
+.featured-link{margin-top:80px;display:flex;justify-content:flex-end}
+.featured-link a{
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.18em;
+  color:var(--ink);text-transform:uppercase;
+  border-bottom:1px solid var(--ink);padding-bottom:6px;
+  display:inline-flex;gap:14px;align-items:center;
+  transition:all .3s ease-out;
+}
+.featured-link a:hover{color:var(--accent);border-color:var(--accent)}
+.featured-link a:hover .arrow{transform:translateX(4px)}
+.featured-link .arrow{transition:transform .25s ease-out}
+
+/* Why Pillars */
+.why{padding:144px 96px;background:var(--surface-alt)}
+.why-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:96px;align-items:end}
+.why .section-eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;
+}
+.why .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+.why h2{
+  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
+  color:var(--ink);line-height:1;
+}
+.why h2 em{font-style:italic;color:var(--accent);font-weight:200}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:64px}
+.pillar{position:relative}
+.pillar .quote-mark{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:200;font-size:80px;
+  color:var(--accent);line-height:.5;margin-bottom:32px;letter-spacing:-.04em;
+  height:32px;
+}
+.pillar h3{
+  font-family:'Inter',sans-serif;font-size:24px;font-weight:300;letter-spacing:-.015em;
+  color:var(--ink);margin-bottom:24px;line-height:1.35;font-style:italic;
+}
+.pillar p{color:var(--ink-muted);font-size:15px;line-height:1.75}
+.pillar:not(:last-child)::after{
+  content:'';position:absolute;top:0;right:-32px;width:1px;height:100%;background:var(--line);
+}
+
+/* Final CTA */
+.cta{background:var(--ink);color:var(--bg);padding:160px 96px;text-align:center}
+.cta-inner{max-width:760px;margin:0 auto}
+.cta .section-eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
+  color:var(--brass-soft);text-transform:uppercase;margin-bottom:32px;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+}
+.cta .section-eyebrow::before,
+.cta .section-eyebrow::after{content:'';width:32px;height:1px;background:var(--brass-soft)}
+.cta h2{
+  font-family:'Inter',sans-serif;font-weight:200;font-size:76px;letter-spacing:-.03em;
+  color:var(--bg);line-height:1.05;margin-bottom:32px;
+}
+.cta h2 em{font-style:italic;color:var(--brass-soft);font-weight:200}
+.cta p{
+  font-family:'Inter',sans-serif;font-size:18px;color:var(--bg);opacity:.78;
+  max-width:540px;margin:0 auto 56px;line-height:1.7;
+}
+.btn-inverted{background:var(--bg);color:var(--ink);border:1px solid var(--bg)}
+.btn-inverted:hover{background:var(--brass);color:var(--bg);border-color:var(--brass);transform:translateY(-1px)}
+
+/* Footer */
+.footer{background:var(--bg-2);padding:96px 96px 32px;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:80px}
+.footer-brand .mark{
+  font-family:'Inter',sans-serif;font-weight:300;font-size:32px;letter-spacing:.18em;
+  color:var(--ink);line-height:1;display:block;
+}
+.footer-brand .wm{
+  font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;
+  color:var(--ink-muted);margin-top:8px;text-transform:uppercase;display:block;
+}
+.footer-brand .tag{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:300;font-size:17px;
+  color:var(--ink);margin-top:32px;max-width:340px;line-height:1.5;
+}
+.footer-col h4{
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.32em;
+  color:var(--ink-muted);text-transform:uppercase;margin-bottom:24px;
+}
+.footer-col a, .footer-col span{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:400;
+  color:var(--ink);display:block;margin-bottom:12px;
+  transition:color .2s ease-out;
+}
+.footer-col a:hover{color:var(--accent)}
+.footer-col .accent{color:var(--accent);font-weight:500}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:32px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;
+  color:var(--ink-muted);text-transform:uppercase;
+}
+.footer-bottom a{color:var(--ink-muted);transition:color .2s ease-out}
+.footer-bottom a:hover{color:var(--accent)}
+.footer-bottom .links{display:flex;gap:24px}
+
+.label-bar{
+  position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--bg);
+  padding:12px 24px;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
+  text-align:center;text-transform:uppercase;z-index:99;opacity:.85;
+}
+
+@media (max-width: 1100px){
+  .nav, .hero, .trust, .how, .featured, .why, .cta, .footer { padding-left: 32px; padding-right: 32px }
+  .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 72px; padding-bottom: 88px }
+  .hero h1 { font-size: 64px }
+  .hero-photo { height: 420px }
+  .trust { padding: 48px 32px }
+  .awards { flex-direction: column; gap: 24px; align-items: center }
+  .award-badge { align-items: center; text-align: center }
+  .how-header, .featured-header, .why-header { grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px }
+  .how h2, .featured h2, .why h2 { font-size: 44px }
+  .cta h2 { font-size: 48px }
+  .steps { grid-template-columns: 1fr; gap: 56px }
+  .step:not(:last-child)::after { display: none }
+  .project-grid { grid-template-columns: 1fr; gap: 48px }
+  .pillars { grid-template-columns: 1fr; gap: 48px }
+  .pillar:not(:last-child)::after { display: none }
+  .pillar:not(:last-child) { padding-bottom: 48px; border-bottom: 1px solid var(--line) }
+  .featured, .why, .cta { padding-top: 88px; padding-bottom: 88px }
+  .cta p { font-size: 16px }
+  .footer { padding: 64px 32px 24px }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center }
+}
+@media (max-width: 640px){
+  .footer-grid { grid-template-columns: 1fr }
+  .featured-link { justify-content: center; margin-top: 56px }
+}
+</style>
+</head>
+<body>
+<div class="page-transition"></div>
+
+<header class="nav">
+  <a href="#" class="brand" aria-label="AM Bathrooms and Projects, home">
+    <span class="mark">AM</span>
+    <span class="wm">Bathrooms + Projects</span>
+  </a>
+  <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      <span>Beautifully</span>
+      <span><em>Designed.</em></span>
+      <span>Expertly Managed.</span>
+    </h1>
+    <p class="sub">From beautiful bathrooms and functional kitchens to full interior transformations. A complete design and build service, design led and expertly managed from start to finish.</p>
+    <div class="cta-row">
+      <a href="projects.html" class="btn btn-primary">Explore Our Projects <span class="arrow">→</span></a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-label">Lilyfield · 2024</div>
+    <div class="scroll-hint">Scroll</div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust-flipper" id="trustFlipper">
+    <div class="trust-face trust-front">
+      <div class="awards">
+        <div class="award-badge">
+          <span class="year">2023</span>
+          <span>HIA Award Winner</span>
+        </div>
+        <div class="award-badge">
+          <span class="year">100%</span>
+          <span>Referral based</span>
+        </div>
+        <div class="award-badge">
+          <span class="year">45+</span>
+          <span>Years experience</span>
+        </div>
+      </div>
+    </div>
+    <div class="trust-face trust-back">
+      <div class="quote" id="trustQuote">
+        <span class="stars">★★★★★</span>
+        <span class="qt">"They managed every detail. We could actually live our lives during the build."</span>
+        <span class="who">Sarah K. · Lilyfield bathroom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-header">
+    <div>
+      <div class="section-eyebrow">The process</div>
+      <h2>How it <em>works.</em></h2>
+    </div>
+    <p class="lead">One process. One project manager. From first sketch to final handover. Nothing slips through the cracks.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="num">01</div>
+      <h3>Consultation</h3>
+      <p>We listen first. Walk your home, understand how you live, where the friction is.</p>
+    </div>
+    <div class="step">
+      <div class="num">02</div>
+      <h3>Design</h3>
+      <p>Jenny leads the design. Plans, fixtures, finishes. All costed before a tool moves.</p>
+    </div>
+    <div class="step">
+      <div class="num">03</div>
+      <h3>Build</h3>
+      <p>Ante's team handles every trade. One point of contact. Weekly updates.</p>
+    </div>
+    <div class="step">
+      <div class="num">04</div>
+      <h3>Handover</h3>
+      <p>Walkthrough, defect free, on time. We stay reachable long after handover.</p>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="featured-header">
+    <div>
+      <div class="section-eyebrow">Selected work</div>
+      <h2>Recent <em>renovations.</em></h2>
+    </div>
+    <p class="lead">Each project a real home, real people, real results. Click through to see the full story.</p>
+  </div>
+  <div class="project-grid">
+    <a href="#" class="project-card">
+      <div class="project-image p1"></div>
+      <div class="project-meta">Lilyfield · 2024</div>
+      <div class="project-name">Main bathroom and laundry</div>
+    </a>
+    <a href="#" class="project-card">
+      <div class="project-image p2"></div>
+      <div class="project-meta">Rozelle · 2024</div>
+      <div class="project-name">Kitchen renovation</div>
+    </a>
+    <a href="#" class="project-card">
+      <div class="project-image p3"></div>
+      <div class="project-meta">Mosman · 2023</div>
+      <div class="project-name">Ensuite and walk in robe</div>
+    </a>
+  </div>
+  <div class="featured-link">
+    <a href="projects.html">See all projects <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="why-header">
+    <div>
+      <div class="section-eyebrow">Why we work this way</div>
+      <h2>What sets us <em>apart.</em></h2>
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="quote-mark">"</div>
+      <h3>We manage the whole project.</h3>
+      <p>From the first consultation to the final handover, you have one project manager. One point of contact. No chasing trades, no juggling timelines. Just a clear, calm process from start to finish.</p>
+    </div>
+    <div class="pillar">
+      <div class="quote-mark">"</div>
+      <h3>The work is quality you can see.</h3>
+      <p>Forty five years of combined experience shows up in the details. Waterproofing done right. Tiles aligned. Joinery that closes flush. Finishes that age gracefully over time.</p>
+    </div>
+    <div class="pillar">
+      <div class="quote-mark">"</div>
+      <h3>You always know what's happening.</h3>
+      <p>Weekly updates, no surprises. We tell you what's coming, what's done, what we found behind the wall. Honest answers about cost and timing. The kind of communication you wish all trades had.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <div class="section-eyebrow">Ready when you are</div>
+    <h2>Let's talk about <em>your home.</em></h2>
+    <p>Whether you're ready to start or still exploring ideas, we'd love to hear about your project. One conversation is enough to know if we're the right fit.</p>
+    <a href="contact.html" class="btn btn-inverted">Start a conversation <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="mark">AM</span>
+      <span class="wm">Bathrooms + Projects</span>
+      <p class="tag">Beautifully designed. Expertly managed.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="awards.html">Awards</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#">(02) XXXX XXXX</a>
+      <a href="#">hello@ambathrooms.com.au</a>
+      <span>Drummoyne, Sydney</span>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#" class="accent">★ 5.0 on Google</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AM Bathrooms + Projects</span>
+    <div class="links">
+      <a href="#">Privacy</a>
+      <a href="#">ABN XX XXX XXX XXX</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="animations.js"></script>
+</body>
+</html>
