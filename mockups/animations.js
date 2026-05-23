@@ -139,9 +139,11 @@
   var flipper=document.getElementById('trustFlipper');
   if(flipper){
     var reviews=[
-      {text:'"We were initially nervous about a full bathroom renovation, but AM Bathrooms made the entire process feel effortless. Every detail was executed to a first-class standard."',who:'Terry · Rozelle'},
-      {text:'"From design through to construction, the process was seamless, with clear communication and exceptional project management throughout. The result has completely transformed our home."',who:'Biana · Roseville'},
-      {text:'"From the very first meeting, Jenny understood exactly what we wanted and guided us through every step. The result is a beautifully designed home that feels cohesive, personal and truly special."',who:'Tanya · Annandale'}
+      {text:'"The process was seamless and stress-free."',who:''},
+      {text:'"A team you can trust to get the job done smoothly, headache-free."',who:''},
+      {text:'"Ante\'s craftsmanship was world class."',who:''},
+      {text:'"Honest, reliable and left the site clean every single day."',who:''},
+      {text:'"What could have been a very daunting task, was straightforward and enjoyable."',who:''}
     ];
     var rIdx=0;
     var quoteEl=document.getElementById('trustQuote');
@@ -149,7 +151,9 @@
     function updateReview(i){
       if(!quoteEl) return;
       quoteEl.querySelector('.qt').textContent=reviews[i].text;
-      quoteEl.querySelector('.who').textContent=reviews[i].who;
+      var whoEl=quoteEl.querySelector('.who');
+      whoEl.textContent=reviews[i].who;
+      whoEl.style.display=reviews[i].who?'':'none';
     }
 
     setInterval(function(){
