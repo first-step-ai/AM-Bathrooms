@@ -35,7 +35,7 @@
     {sel:'.hero h1 span',stagger:100},
     {sel:'.hero .sub',delay:280},
     {sel:'.hero .cta-row',delay:380},
-    {sel:'.hero-photo',delay:350},
+    {sel:'.hero-bg',delay:0},
     // Homepage sections
     {sel:'.trust',delay:0},
     {sel:'.how-header > *',stagger:80},
@@ -88,7 +88,7 @@
 
   // ─── Intersection Observer ───
   var allSelectors=config.map(function(c){return c.sel;}).join(',')
-    +', .hero-photo, .founder-photo';
+    +', .founder-photo';
 
   var observer=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
@@ -105,9 +105,7 @@
 
   // ─── Parallax ───
   var parallaxEls=[];
-  var heroPhoto=document.querySelector('.hero-photo');
   var founderPhoto=document.querySelector('.founder-photo');
-  if(heroPhoto) parallaxEls.push({el:heroPhoto,rate:0.12});
   if(founderPhoto) parallaxEls.push({el:founderPhoto,rate:0.08});
 
   // Decorative elements: gentler parallax
@@ -141,11 +139,9 @@
   var flipper=document.getElementById('trustFlipper');
   if(flipper){
     var reviews=[
-      {text:'"They managed every detail. We could actually live our lives during the build."',who:'Sarah K. · Lilyfield bathroom'},
-      {text:'"Two years in and the tile lines still look like the day they were laid. This is what quality looks like."',who:'David M. · Mosman ensuite'},
-      {text:'"Jenny pulled together a palette we never would have considered, and it was exactly right."',who:'Penny T. · Rozelle kitchen'},
-      {text:'"We have used three different renovators over the years. AM is the only team we would call back without thinking twice."',who:'Robert + Helen W. · Drummoyne'},
-      {text:'"Calm, considered, and not a single surprise on the final invoice."',who:'Tom B. · Bondi laundry'}
+      {text:'"We were initially nervous about a full bathroom renovation, but AM Bathrooms made the entire process feel effortless. Every detail was executed to a first-class standard."',who:'Terry · Rozelle'},
+      {text:'"From design through to construction, the process was seamless, with clear communication and exceptional project management throughout. The result has completely transformed our home."',who:'Biana · Roseville'},
+      {text:'"From the very first meeting, Jenny understood exactly what we wanted and guided us through every step. The result is a beautifully designed home that feels cohesive, personal and truly special."',who:'Tanya · Annandale'}
     ];
     var rIdx=0;
     var quoteEl=document.getElementById('trustQuote');
@@ -195,9 +191,9 @@
       '</nav>'+
       '<div class="menu-divider"></div>'+
       '<div class="menu-contact">'+
-        '<a href="mailto:hello@ambathrooms.com.au">hello@ambathrooms.com.au</a>'+
-        '<a href="tel:+61200000000">(02) XXXX XXXX</a>'+
-        '<span>Drummoyne, Sydney</span>'+
+        '<a href="mailto:jenny@ambathrooms.com.au">jenny@ambathrooms.com.au</a>'+
+        '<a href="tel:+61291814776">(02) 9181 4776</a>'+
+        '<span>Drummoyne 2047</span>'+
       '</div>';
     document.body.appendChild(panel);
 

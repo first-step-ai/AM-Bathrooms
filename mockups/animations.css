@@ -60,7 +60,6 @@
 }
 
 /* ─── Scroll Reveal: Scale In (photos) ─── */
-.am .hero-photo,
 .am .founder-photo{
   opacity:0;
   transform:scale(.96);
@@ -76,13 +75,12 @@
 }
 
 /* Parallax photos: override transform to use custom property */
-.am .hero-photo.is-visible,
 .am .founder-photo.is-visible{
   transform:translateY(var(--py,0px)) !important;
 }
 
 /* ─── Slide-in Menu Panel ─── */
-.nav{position:relative;z-index:1000}
+.nav{position:sticky;top:0;z-index:1000}
 
 .menu-backdrop{
   position:fixed;inset:0;z-index:998;
@@ -136,8 +134,8 @@
 .menu-nav a:nth-child(5){transition-delay:.24s}
 .menu-nav a:nth-child(6){transition-delay:.28s}
 .menu-nav a:nth-child(7){transition-delay:.32s}
-.menu-nav a:hover{color:var(--brass-soft,#c8a684)}
-.menu-nav a.active{color:var(--brass-soft,#c8a684);font-style:italic}
+.menu-nav a:hover{color:var(--brass-soft,#9aba9a)}
+.menu-nav a.active{color:var(--brass-soft,#9aba9a);font-style:italic}
 
 .menu-divider{
   width:32px;height:1px;background:rgba(245,242,237,.15);
@@ -153,7 +151,7 @@
 }
 .menu-panel.open .menu-contact{opacity:1;transform:none}
 .menu-contact a{color:rgba(245,242,237,.6);text-decoration:none;transition:color .25s ease;display:block}
-.menu-contact a:hover{color:var(--brass-soft,#c8a684)}
+.menu-contact a:hover{color:var(--brass-soft,#9aba9a)}
 
 /* Hamburger → X morph */
 .hamburger span{
