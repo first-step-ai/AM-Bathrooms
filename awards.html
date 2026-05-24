@@ -1,512 +1,381 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Awards & Recognition | AM Bathrooms + Projects | HIA Award Winners Sydney</title>
-<meta name="description" content="AM Bathrooms + Projects has been recognised by the Housing Industry Association (HIA) for bathroom and renovation excellence. See our award-winning projects." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('am')</script>
-<link rel="stylesheet" href="animations.css">
-<style>
-:root{
-  --bg: #f5f2ed;
-  --bg-2: #f8f5f0;
-  --surface: #faf8f4;
-  --surface-alt: #ece6dc;
-  --ink: #1f1d1a;
-  --ink-muted: #6e6862;
-  --ink-faint: #a39c92;
-  --line: #e0d9cc;
-  --line-soft: #ebe5d8;
-  --accent: #5a7a5a;
-  --brass: #7a9a7a;
-  --brass-soft: #9aba9a;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  background:var(--bg);color:var(--ink);
-  font-family:'Inter',system-ui,sans-serif;font-weight:400;line-height:1.6;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-  font-feature-settings:"kern" 1,"liga" 1,"ss01" 1;
-}
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 1 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
-  mix-blend-mode:multiply;
-}
-body > * { position: relative; z-index: 2 }
-a{color:inherit;text-decoration:none}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Awards & Recognition | AM Bathrooms + Projects | HIA Award Winners Sydney</title>
+  <meta name="description" content="AM Bathrooms + Projects has been recognised by the Housing Industry Association (HIA) for bathroom, kitchen, and renovation excellence." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+  <script>document.documentElement.classList.add('am')</script>
+  <link rel="stylesheet" href="animations.css">
+  
+  <style>
+    /* Awards Specific Overrides */
+    .tally-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      background: var(--surface-alt, #ece6dc);
+    }
+    .tally-cell {
+      text-align: center;
+      padding: 48px 0;
+      position: relative;
+    }
+    .tally-cell .number {
+      font-family: var(--font-sans);
+      font-weight: 200;
+      font-size: 56px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .tally-cell .label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+    }
 
-/* Navbar */
-.nav{
-  background:var(--bg);border-bottom:1px solid var(--line);
-  padding:32px 96px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
-.brand .mark{
-  font-family:'Inter',sans-serif;font-weight:300;font-size:34px;letter-spacing:.18em;
-  color:var(--ink);line-height:1;
-}
-.brand .wm{
-  font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;
-  color:var(--ink-muted);margin-top:8px;text-transform:uppercase;
-}
-.hamburger{
-  width:48px;height:48px;border:1px solid var(--line);background:transparent;cursor:pointer;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:2px;
-  transition:all .25s ease-out;
-}
-.hamburger:hover{background:var(--ink);border-color:var(--ink)}
-.hamburger:hover span{background:var(--bg)}
-.hamburger span{display:block;width:18px;height:1px;background:var(--ink);transition:background .25s ease-out}
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .award-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 140px;
+      align-items: center;
+      padding: 48px 80px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .award-row:hover {
+      background-color: var(--surface);
+      padding-left: 96px;
+      padding-right: 64px;
+    }
+    .award-mark {
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--grid-line-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background-color: var(--bg);
+      transition: border-color 0.3s ease;
+    }
+    .award-row:hover .award-mark {
+      border-color: var(--accent);
+    }
+    .award-mark.win {
+      border-color: var(--accent);
+      background-color: rgba(90, 122, 90, 0.05);
+      font-weight: 600;
+    }
+    .award-detail h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .award-detail .award-meta {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .award-detail .award-meta .pill {
+      font-size: 9px;
+      padding: 2px 8px;
+      background-color: var(--accent);
+      color: var(--bg);
+      border-radius: 1px;
+    }
+    .award-detail .award-meta .pill.finalist {
+      background-color: transparent;
+      color: var(--ink-muted);
+      border: 1px solid var(--grid-line-color);
+    }
+    .award-detail p.description {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      max-width: 640px;
+    }
+    .award-year-side {
+      text-align: right;
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 300;
+      color: var(--grid-line-color);
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+    .award-row:hover .award-year-side {
+      color: var(--accent);
+    }
 
-/* Page header */
-.page-head{padding:128px 96px 80px}
-.page-head .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:32px;
-  display:flex;align-items:center;gap:16px;
-}
-.page-head .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
-.page-head h1{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:96px;letter-spacing:-.038em;
-  color:var(--ink);line-height:1;margin-bottom:40px;max-width:1100px;
-}
-.page-head h1 em{font-style:italic;color:var(--accent);font-weight:200}
-.page-head h1 span{display:block}
-.page-head .sub{
-  font-family:'Inter',sans-serif;font-size:19px;font-weight:300;font-style:italic;color:var(--ink);
-  max-width:680px;line-height:1.55;letter-spacing:-.005em;
-}
-
-/* Tally strip */
-.tally{
-  padding:48px 96px;
-  background:var(--surface-alt);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
-}
-.tally-item{text-align:center;position:relative}
-.tally-item:not(:last-child)::after{
-  content:'';position:absolute;top:50%;right:-24px;width:1px;height:48px;
-  background:var(--line);transform:translateY(-50%);
-}
-.tally-item .num{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:48px;letter-spacing:-.025em;
-  color:var(--accent);line-height:1;margin-bottom:12px;
-}
-.tally-item .num em{font-style:italic;font-weight:200}
-.tally-item .label{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;
-  color:var(--ink-muted);text-transform:uppercase;
-}
-
-/* Awards list */
-.awards{padding:96px 96px 144px}
-.award-row{
-  display:grid;grid-template-columns:120px 1fr auto;gap:64px;align-items:center;
-  padding:56px 0;border-bottom:1px solid var(--line);
-  transition:all .3s ease-out;
-}
-.award-row:first-child{border-top:1px solid var(--line)}
-.award-row:hover{background:var(--surface);padding-left:24px;padding-right:24px}
-.award-row.win{
-  border-left:3px solid var(--accent);padding-left:32px;
-}
-.award-row.win:hover{padding-left:48px}
-
-.award-mark{
-  display:flex;align-items:center;justify-content:center;
-  width:100px;height:100px;border:1px solid var(--line);background:var(--bg);
-  border-radius:50%;flex-shrink:0;
-}
-.award-mark span{
-  font-family:'Inter',sans-serif;font-weight:300;font-size:24px;letter-spacing:.16em;
-  color:var(--accent);
-}
-.award-mark.gold{border:2px solid var(--accent);background:var(--surface)}
-.award-mark.gold span{color:var(--accent);font-weight:500}
-
-.award-detail{min-width:0}
-.award-meta{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:14px;
-}
-.award-meta .pill{
-  display:inline-block;padding:4px 10px;background:var(--accent);color:var(--bg);
-  border-radius:1px;margin-right:12px;letter-spacing:.2em;font-size:9.5px;
-}
-.award-meta .pill.finalist{background:transparent;color:var(--ink-muted);border:1px solid var(--line)}
-.award-name{
-  font-family:'Inter',sans-serif;font-size:34px;font-weight:200;letter-spacing:-.022em;
-  color:var(--ink);line-height:1.15;margin-bottom:14px;
-}
-.award-name em{font-style:italic;color:var(--accent);font-weight:200}
-.award-line{
-  font-family:'Inter',sans-serif;font-size:16px;font-weight:300;font-style:italic;color:var(--ink-muted);
-  line-height:1.6;max-width:620px;letter-spacing:-.005em;
-}
-
-.award-meta-right{text-align:right;flex-shrink:0}
-.award-year{
-  font-family:'Inter',sans-serif;font-weight:100;font-size:88px;letter-spacing:-.04em;
-  color:var(--accent);line-height:1;margin-bottom:16px;
-}
-.award-link{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.28em;
-  color:var(--ink);text-transform:uppercase;
-  border-bottom:1px solid var(--ink);padding-bottom:6px;
-  display:inline-flex;gap:12px;align-items:center;
-  transition:all .3s ease-out;
-}
-.award-link:hover{color:var(--accent);border-color:var(--accent);gap:18px}
-.award-link .arrow{transition:transform .25s ease-out}
-
-/* Final CTA */
-.cta{background:var(--ink);color:var(--bg);padding:160px 96px;text-align:center}
-.cta-inner{max-width:760px;margin:0 auto}
-.cta .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--brass-soft);text-transform:uppercase;margin-bottom:32px;
-  display:inline-flex;align-items:center;gap:16px;
-}
-.cta .section-eyebrow::before,
-.cta .section-eyebrow::after{content:'';width:32px;height:1px;background:var(--brass-soft)}
-.cta h2{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:72px;letter-spacing:-.03em;
-  color:var(--bg);line-height:1.05;margin-bottom:32px;
-}
-.cta h2 em{font-style:italic;color:var(--brass-soft);font-weight:200}
-.cta p{
-  font-family:'Inter',sans-serif;font-size:18px;color:var(--bg);opacity:.78;
-  max-width:540px;margin:0 auto 56px;line-height:1.7;
-}
-.btn{
-  font-family:'Inter',sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;
-  padding:20px 36px;border-radius:1px;cursor:pointer;transition:all .3s ease-out;
-  text-transform:uppercase;display:inline-flex;align-items:center;gap:14px;
-}
-.btn .arrow{font-size:15px;transition:transform .25s ease-out}
-.btn:hover .arrow{transform:translateX(4px)}
-.btn-inverted{background:var(--bg);color:var(--ink);border:1px solid var(--bg)}
-.btn-inverted:hover{background:var(--brass);color:var(--bg);border-color:var(--brass);transform:translateY(-1px)}
-
-/* Footer */
-.footer{background:var(--bg-2);padding:96px 96px 32px;border-top:1px solid var(--line)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:80px}
-.footer-brand .mark{font-family:'Inter',sans-serif;font-weight:300;font-size:32px;letter-spacing:.18em;color:var(--ink);line-height:1;display:block}
-.footer-brand .wm{font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;color:var(--ink-muted);margin-top:8px;text-transform:uppercase;display:block}
-.footer-brand .tag{font-family:'Inter',sans-serif;font-style:italic;font-weight:300;font-size:17px;color:var(--ink);margin-top:32px;max-width:340px;line-height:1.5}
-.footer-col h4{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.32em;color:var(--ink-muted);text-transform:uppercase;margin-bottom:24px}
-.footer-col a, .footer-col span{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink);display:block;margin-bottom:12px;transition:color .2s ease-out}
-.footer-col a:hover{color:var(--accent)}
-.footer-col .accent{color:var(--accent);font-weight:500}
-.footer-bottom{border-top:1px solid var(--line);padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--ink-muted);text-transform:uppercase}
-.footer-bottom a{color:var(--ink-muted);transition:color .2s ease-out}
-.footer-bottom a:hover{color:var(--accent)}
-.footer-bottom .links{display:flex;gap:24px}
-
-.label-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--bg);padding:12px 24px;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;text-align:center;text-transform:uppercase;z-index:99;opacity:.85}
-
-@media (max-width: 1100px){
-  .nav, .page-head, .tally, .awards, .cta, .footer { padding-left: 32px; padding-right: 32px }
-  .page-head { padding-top: 72px; padding-bottom: 56px }
-  .page-head h1 { font-size: 56px }
-  .tally { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px }
-  .tally-item:not(:last-child)::after { display: none }
-  .awards { padding-top: 56px; padding-bottom: 88px }
-  .award-row { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; text-align: left }
-  .award-row.win { padding-left: 24px }
-  .award-row:hover { padding-left: 0; padding-right: 0 }
-  .award-row.win:hover { padding-left: 24px }
-  .award-mark { width: 72px; height: 72px }
-  .award-mark span { font-size: 18px }
-  .award-name { font-size: 26px }
-  .award-meta-right { text-align: left; display: flex; align-items: baseline; gap: 24px }
-  .award-year { font-size: 56px; margin-bottom: 0 }
-  .cta { padding: 96px 32px }
-  .cta h2 { font-size: 48px }
-  .cta p { font-size: 16px }
-  .footer { padding: 64px 32px 24px }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center }
-}
-@media (max-width: 640px){
-  .footer-grid { grid-template-columns: 1fr }
-}
-</style>
+    @media (max-width: 1100px) {
+      .tally-strip {
+        grid-template-columns: 1fr;
+      }
+      .tally-cell {
+        padding: 32px 0;
+      }
+      .tally-cell:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        right: 20%;
+        height: 1px;
+        background-color: var(--grid-line-color);
+      }
+      .award-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 40px 32px;
+      }
+      .award-row:hover {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+      .award-year-side {
+        text-align: left;
+        font-size: 48px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="page-transition"></div>
 
-<header class="nav">
-  <a href="index.html" class="brand" aria-label="AM Bathrooms and Projects, home">
-    <span class="mark">AM</span>
-    <span class="wm">Bathrooms + Projects</span>
-  </a>
-  <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-</header>
-
-<section class="page-head">
-  <div class="section-eyebrow">Awards + Recognition</div>
-  <h1>
-    <span>Recognised for the work</span>
-    <span>we're <em>most proud of.</em></span>
-  </h1>
-  <p class="sub">Our awards aren't industry theatre. They reflect the standard we hold ourselves to on every project.</p>
-</section>
-
-<section class="tally">
-  <div class="tally-item">
-    <div class="num">4<em>×</em></div>
-    <div class="label">HIA Winners</div>
-  </div>
-  <div class="tally-item">
-    <div class="num">10<em>+</em></div>
-    <div class="label">HIA Finalists</div>
-  </div>
-  <div class="tally-item">
-    <div class="num">2025</div>
-    <div class="label">Most recent recognition</div>
-  </div>
-</section>
-
-<section class="awards">
-
-  <article class="award-row win">
-    <div class="award-mark gold">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill">Winner</span>
-        Renovated Kitchen of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Renovated Kitchen of the <em>Year</em></h3>
-      <p class="award-line">Designed around the rhythm of family life, this award-winning kitchen transformation turned a constrained heritage space into the true heart of the home.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Rozelle project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Kitchen Design of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Kitchen Design of the <em>Year</em></h3>
-      <p class="award-line">Heritage character balanced with refined contemporary design in a constrained Rozelle terrace kitchen.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Rozelle project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Renovated Bathroom of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Renovated Bathroom of the <em>Year</em></h3>
-      <p class="award-line">A Jack-and-Jill ensuite with curved detailing and retained skylight, designed for shared family living.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Rozelle project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Bathroom Design of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Bathroom Design of the <em>Year</em></h3>
-      <p class="award-line">Thoughtful bathroom design maximising space, light, and everyday functionality within a heritage terrace.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Rozelle project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Renovated Bathroom
-      </div>
-      <h3 class="award-name">HIA NSW Renovated <em>Bathroom</em></h3>
-      <p class="award-line">A dark Annandale terrace bathroom transformed into a light-filled family retreat with intelligent planning.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Annandale project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Bathroom Design of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Bathroom Design of the <em>Year</em></h3>
-      <p class="award-line">An award-finalist Annandale bathroom balancing bespoke detailing with genuine family functionality.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2025</div>
-      <a href="projects.html" class="award-link">Annandale project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row win">
-    <div class="award-mark gold">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill">Winner</span>
-        Renovated Bathroom of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Renovated Bathroom of the <em>Year</em></h3>
-      <p class="award-line">An awkwardly shaped bathroom transformed with special attention to zoning for multi-generational family use.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2024</div>
-      <a href="projects.html" class="award-link">Enmore project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row">
-    <div class="award-mark">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill finalist">Finalist</span>
-        Bathroom Design of the Year
-      </div>
-      <h3 class="award-name">HIA NSW Bathroom Design of the <em>Year</em></h3>
-      <p class="award-line">Refined bathroom design delivering calm and storage within a compact inner-west footprint.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2024</div>
-      <a href="projects.html" class="award-link">Newtown project <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row win">
-    <div class="award-mark gold">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill">Winner</span>
-        Small Business Management
-      </div>
-      <h3 class="award-name">HIA Australian Small Business Management <em>Award</em></h3>
-      <p class="award-line">National recognition for outstanding business management, client communication, and consistent project delivery.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2023</div>
-      <a href="about.html" class="award-link">About us <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-  <article class="award-row win">
-    <div class="award-mark gold">
-      <span>HIA</span>
-    </div>
-    <div class="award-detail">
-      <div class="award-meta">
-        <span class="pill">Winner</span>
-        Small Business Management
-      </div>
-      <h3 class="award-name">HIA NSW Small Business Management <em>Award</em></h3>
-      <p class="award-line">State-level recognition for exceptional renovation business management and client service.</p>
-    </div>
-    <div class="award-meta-right">
-      <div class="award-year">2022</div>
-      <a href="about.html" class="award-link">About us <span class="arrow">→</span></a>
-    </div>
-  </article>
-
-</section>
-
-<section class="cta">
-  <div class="cta-inner">
-    <div class="section-eyebrow">Ready when you are</div>
-    <h2>Let's talk about <em>your home.</em></h2>
-    <p>Whether you're ready to start or still exploring ideas, we'd love to hear about your project. One conversation is enough to know if we're the right fit.</p>
-    <a href="contact.html" class="btn btn-inverted">Start a conversation <span class="arrow">→</span></a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
+  <!-- Header -->
+  <header class="nav border-b">
+    <a href="index.html" class="brand" aria-label="AM Bathrooms and Projects, home">
       <span class="mark">AM</span>
       <span class="wm">Bathrooms + Projects</span>
-      <p class="tag">Beautifully designed. Expertly managed.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="awards.html">Awards</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="tel:+61291814776">(02) 9181 4776</a>
-      <a href="mailto:jenny@ambathrooms.com.au">jenny@ambathrooms.com.au</a>
-      <span>Shop 8, 77-105 Victoria Rd, Drummoyne 2047</span>
-    </div>
-    <div class="footer-col">
-      <h4>Follow</h4>
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#" class="accent">★ 5.0 on Google</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 AM Bathrooms + Projects</span>
-    <div class="links">
-      <a href="#">Privacy</a>
-      <a href="#">ABN 51 613 280 149</a>
-    </div>
-  </div>
-</footer>
+    </a>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </header>
 
+  <!-- Page Header -->
+  <section class="page-head border-b">
+    <div class="grid-cell" style="padding: 96px 80px;">
+      <div class="clip-wrap">
+        <div class="sub-eyebrow clip-item">Awards & Recognition</div>
+      </div>
+      <h1 class="clip-wrap" style="font-size: clamp(48px, 6.5vw, 96px); font-weight: 200; letter-spacing: -0.04em; line-height: 1.0; margin-top: 24px;">
+        Recognised <em class="serif-italic">Excellence.</em>
+      </h1>
+      <p class="reveal-fade-up" style="font-size: 19px; font-weight: 300; color: var(--ink-muted); max-width: 600px; line-height: 1.65; margin-top: 32px;">
+        Our awards reflect the standard of quality Ante, Jenny, and the team hold themselves to on every residential project.
+      </p>
+    </div>
+  </section>
 
-<script src="animations.js"></script>
+  <!-- Tally Strip -->
+  <section class="tally border-b">
+    <div class="tally-strip">
+      <div class="tally-cell">
+        <div class="number">4×</div>
+        <div class="label">HIA NSW Winners</div>
+        <div class="vertical-divider-line"></div>
+      </div>
+      <div class="tally-cell">
+        <div class="number">10+</div>
+        <div class="label">HIA NSW Finalists</div>
+        <div class="vertical-divider-line"></div>
+      </div>
+      <div class="tally-cell">
+        <div class="number">2025</div>
+        <div class="label">Most Recent Award</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Timeline -->
+  <section class="awards border-b">
+    <div class="awards-list">
+
+      <!-- Award 1 -->
+      <div class="award-row">
+        <div class="award-mark win">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill">Winner</span>
+            <span>Kitchen of the Year</span>
+          </div>
+          <h3>Renovated Kitchen of the <em class="serif-italic">Year</em></h3>
+          <p class="description">Awarded for our Rozelle terrace kitchen transformation, recognized by the HIA judges for space maximization, custom fluted carpentry, and outstanding cabinetry alignment.</p>
+        </div>
+        <div class="award-year-side">2025</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 2 -->
+      <div class="award-row">
+        <div class="award-mark">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill finalist">Finalist</span>
+            <span>Kitchen Design</span>
+          </div>
+          <h3>Kitchen Design of the <em class="serif-italic">Year</em></h3>
+          <p class="description">Finalist recognition for detailing and architectural layout in our Rozelle kitchen renovation.</p>
+        </div>
+        <div class="award-year-side">2025</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 3 -->
+      <div class="award-row">
+        <div class="award-mark">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill finalist">Finalist</span>
+            <span>Bathroom of the Year</span>
+          </div>
+          <h3>Renovated Bathroom of the <em class="serif-italic">Year</em></h3>
+          <p class="description">Selected as finalist for our Rozelle master ensuite renovation featuring curved glass screens and skylight zoning.</p>
+        </div>
+        <div class="award-year-side">2025</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 4 -->
+      <div class="award-row">
+        <div class="award-mark">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill finalist">Finalist</span>
+            <span>Bathroom of the Year</span>
+          </div>
+          <h3>Renovated Bathroom of the <em class="serif-italic">Year</em></h3>
+          <p class="description">Selected as finalist for our Annandale compact bathroom renovation, noted for hidden layout cisterns and custom double concrete vanities.</p>
+        </div>
+        <div class="award-year-side">2025</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 5 -->
+      <div class="award-row">
+        <div class="award-mark win">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill">Winner</span>
+            <span>Bathroom of the Year</span>
+          </div>
+          <h3>Renovated Bathroom of the <em class="serif-italic">Year</em></h3>
+          <p class="description">Winner award for Enmore bathroom project, featuring special zoning and concrete tiling for multi-generational family use.</p>
+        </div>
+        <div class="award-year-side">2024</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 6 -->
+      <div class="award-row">
+        <div class="award-mark win">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill">Winner</span>
+            <span>Small Business</span>
+          </div>
+          <h3>Australian Small Business Management <em class="serif-italic">Award</em></h3>
+          <p class="description">National winner award to Jenny and AM Bathrooms + Projects for business systems excellence, clear communication logs, and trade supervision processes.</p>
+        </div>
+        <div class="award-year-side">2023</div>
+        <div class="horizontal-divider-line"></div>
+      </div>
+
+      <!-- Award 7 -->
+      <div class="award-row">
+        <div class="award-mark win">HIA</div>
+        <div class="award-detail">
+          <div class="award-meta">
+            <span class="pill">Winner</span>
+            <span>Small Business</span>
+          </div>
+          <h3>NSW Small Business Management <em class="serif-italic">Award</em></h3>
+          <p class="description">State winner award for business coordination systems, client portal updates, and trade scheduling coordination.</p>
+        </div>
+        <div class="award-year-side">2022</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta">
+    <div class="cta-inner reveal-fade-up">
+      <div class="section-eyebrow">Ready when you are</div>
+      <h2>Let's discuss <em class="serif-italic">your home.</em></h2>
+      <p>Whether you're ready to start building or just outlining ideas, we'd love to hear your story. One conversation is enough to see if we're a match.</p>
+      <a href="contact.html" class="btn btn-inverted">Start a conversation <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="mark">AM</span>
+        <span class="wm">Bathrooms + Projects</span>
+        <p class="tag">Beautifully designed. Expertly managed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="awards.html">Awards</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+61291814776">(02) 9181 4776</a>
+        <a href="mailto:jenny@ambathrooms.com.au">jenny@ambathrooms.com.au</a>
+        <span>Shop 8, 77-105 Victoria Rd, Drummoyne 2047</span>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#" class="accent">★ 5.0 on Google</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AM Bathrooms + Projects</span>
+      <div class="links">
+        <a href="#">Privacy</a>
+        <a href="#">ABN 51 613 280 149</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animations.js"></script>
 </body>
 </html>
