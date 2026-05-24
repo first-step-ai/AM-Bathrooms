@@ -6,7 +6,7 @@
     <title>AM Bathrooms + Projects │ Bathroom, Kitchen & Full Interior Renovations Sydney</title>
     <meta name="description" content="AM Bathrooms + Projects designs and builds bathroom, kitchen, laundry and full interior renovations across Sydney. One team, every detail, start to finish. HIA award-winning.">
     <style>
-        /* Base Styles & Typography */
+        /* --- Base Styles & Typography --- */
         :root {
             --bg-color: #FAFAFA;
             --text-main: #1A1A1A;
@@ -27,6 +27,7 @@
             color: var(--text-main);
             line-height: 1.6;
             font-weight: 300;
+            overflow-x: hidden;
         }
 
         h1, h2, h3 {
@@ -45,51 +46,210 @@
             padding: 0 5%;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
+        /* --- Scroll Animations --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Navigation & Sliding Menu (Inform Design Style) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference; /* Keeps logo/menu visible on light/dark backgrounds */
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hamburger-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger-lines span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: currentColor;
+            transition: 0.3s ease;
+        }
+
+        /* Side Panel */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Hidden by default */
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
             background-color: var(--text-main);
             color: #fff;
+            z-index: 200;
+            transition: right 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-panel.active {
+            right: 0;
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-bottom: 4rem;
+        }
+
+        .side-nav ul {
+            list-style: none;
+        }
+
+        .side-nav li {
+            margin-bottom: 2rem;
+        }
+
+        .side-nav a {
+            color: #fff;
+            font-size: 2.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .side-nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Overlay */
+        .panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: #fff;
+            color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.85rem;
-            transition: background 0.3s ease;
+            transition: transform 0.4s ease, background 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
-            background-color: #333;
+            transform: translateY(-3px);
+            background-color: #f0f0f0;
         }
 
-        /* Hero Section */
+        /* --- Hero Section (Craig Linke Style) --- */
         .hero {
             height: 100vh;
+            position: relative;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            justify-content: center;
             color: #fff;
             text-align: center;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            padding: 0 5%;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(3rem, 6vw, 5.5rem);
             margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
             font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Trust Bar (Awards & Quotes) */
+        /* --- Trust Bar --- */
         .trust-bar {
-            padding: 4rem 0;
+            padding: 6rem 0;
             border-bottom: 1px solid var(--accent);
             text-align: center;
         }
@@ -98,139 +258,198 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 3rem;
+            line-height: 2;
         }
 
         .quote {
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-style: italic;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            color: var(--text-main);
         }
 
-        /* How It Works */
+        /* --- How It Works --- */
         .process {
-            padding: 8rem 0;
+            padding: 10rem 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 6rem;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 3.5rem);
         }
 
         .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            gap: 4rem;
         }
 
         .process-step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--text-main);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.8rem;
             display: inline-block;
         }
 
         .process-step p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        /* Featured Projects */
+        /* --- Featured Projects (Beralin Style Transitions) --- */
         .projects {
-            padding: 4rem 0 8rem;
+            padding: 4rem 0 10rem;
         }
 
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
+        }
+
+        .project-card {
+            display: block;
+            overflow: hidden; /* Contains the image zoom */
+            group: hover;
+        }
+
+        .img-wrapper {
+            overflow: hidden;
+            margin-bottom: 1.5rem;
         }
 
         .project-card img {
             width: 100%;
-            height: 500px;
+            height: 600px;
             object-fit: cover;
-            margin-bottom: 1.5rem;
-            transition: opacity 0.3s ease;
+            transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+            display: block;
         }
 
+        /* The Beralin cinematic zoom effect */
         .project-card:hover img {
-            opacity: 0.9;
+            transform: scale(1.06);
+            filter: brightness(0.9);
         }
 
         .project-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            transition: color 0.3s ease;
         }
 
         .project-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
         }
 
-        /* Why AM Bathrooms */
+        /* --- Why AM Bathrooms --- */
         .why-us {
             background-color: #EFEFEF;
-            padding: 8rem 0;
+            padding: 10rem 0;
         }
 
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
+            gap: 5rem;
         }
 
         .why-col h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
         }
 
         .why-col p {
             color: var(--text-muted);
+            line-height: 1.8;
         }
 
-        /* Final CTA */
+        /* --- Final CTA --- */
         .final-cta {
-            padding: 10rem 0;
+            padding: 12rem 0;
             text-align: center;
         }
 
         .final-cta h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            margin-bottom: 2rem;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .final-cta p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
+            margin-bottom: 3rem;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        .final-cta .btn {
+            background-color: var(--text-main);
+            color: #fff;
+        }
+        
+        .final-cta .btn:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">AM Bathrooms + Projects</div>
+        <button class="menu-btn" id="menuToggle">
+            Menu
+            <div class="hamburger-lines">
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </header>
+
+    <div class="panel-overlay" id="panelOverlay"></div>
+    <nav class="side-panel" id="sidePanel">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <div class="side-nav">
+            <ul>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Process</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Awards</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section class="hero">
-        <div class="container hero-content">
+        <video class="video-bg" autoplay loop muted playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-minimalist-bathroom-with-a-large-bathtub-41775-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in">
             <h1>Beautifully Designed. Expertly Built.</h1>
             <p>From bathrooms and kitchens to full interior renovations - a complete design and build service, managed from first conversation to final handover.</p>
             <a href="#projects" class="btn">Explore Our Projects</a>
         </div>
     </section>
 
-    <section class="trust-bar">
+    <section class="trust-bar fade-in">
         <div class="container">
             <div class="awards">
                 HIA Renovated Bathroom of the Year 2024 &nbsp;|&nbsp; 
@@ -246,23 +465,23 @@
 
     <section class="process">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>A process that takes the stress out of renovating.</h2>
             </div>
             <div class="process-grid">
-                <div class="process-step">
+                <div class="process-step fade-in">
                     <h3>1. Discovery</h3>
                     <p>We visit your home, listen to your brief, and give you a clear, itemised quote.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step fade-in">
                     <h3>2. Design & Planning</h3>
                     <p>We develop the concept, select finishes, and resolve every detail before work begins.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step fade-in">
                     <h3>3. Build</h3>
                     <p>Our team manages trades, scheduling, and site quality. You stay informed without being bothered.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step fade-in">
                     <h3>4. Handover</h3>
                     <p>We walk through the finished space together and make sure everything is exactly right.</p>
                 </div>
@@ -272,22 +491,28 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>The work speaks for itself.</h2>
             </div>
             <div class="project-grid">
-                <a href="#" class="project-card">
-                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop" alt="Modern Bathroom Renovation">
+                <a href="#" class="project-card fade-in">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1000&auto=format&fit=crop" alt="Modern Bathroom Renovation">
+                    </div>
                     <h3>Project Name</h3>
                     <p>[Suburb Name]</p>
                 </a>
-                <a href="#" class="project-card">
-                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="Minimalist Kitchen Renovation">
+                <a href="#" class="project-card fade-in">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=1000&auto=format&fit=crop" alt="Minimalist Kitchen Renovation">
+                    </div>
                     <h3>Project Name</h3>
                     <p>[Suburb Name]</p>
                 </a>
-                <a href="#" class="project-card">
-                    <img src="https://images.unsplash.com/photo-1604709177227-3977c3302901?q=80&w=800&auto=format&fit=crop" alt="Full Interior Renovation">
+                <a href="#" class="project-card fade-in">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1604709177227-3977c3302901?q=80&w=1000&auto=format&fit=crop" alt="Full Interior Renovation">
+                    </div>
                     <h3>Project Name</h3>
                     <p>[Suburb Name]</p>
                 </a>
@@ -297,19 +522,19 @@
 
     <section class="why-us">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Why clients choose us and stay with us.</h2>
             </div>
             <div class="why-grid">
-                <div class="why-col">
+                <div class="why-col fade-in">
                     <h3>One team. Complete project management.</h3>
                     <p>From the first consultation to final handover, we coordinate everything - trades, scheduling, deliveries, and quality control. You don't need to chase anyone or manage anything. We handle it so you don't have to.</p>
                 </div>
-                <div class="why-col">
+                <div class="why-col fade-in">
                     <h3>Work that wins awards. For good reason.</h3>
                     <p>Every finish is deliberate. Every detail considered. Our work has been recognised by the Housing Industry Awards year after year - and our clients see exactly what the judges see.</p>
                 </div>
-                <div class="why-col">
+                <div class="why-col fade-in">
                     <h3>You'll always know what's happening.</h3>
                     <p>Clear communication is part of what we deliver. We keep you updated at every stage so there's nothing to chase, nothing to wonder about, and no unwelcome surprises.</p>
                 </div>
@@ -317,7 +542,7 @@
         </div>
     </section>
 
-    <section class="final-cta">
+    <section class="final-cta fade-in">
         <div class="container">
             <h2>Let's talk about your home.</h2>
             <p>Beautifully designed interiors start with a conversation. Tell us what you're thinking, and we'll take it from there - guiding you through every decision, from first brief to final finish.</p>
@@ -325,5 +550,51 @@
         </div>
     </section>
 
+    <script>
+        // --- Sliding Menu Logic ---
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const sidePanel = document.getElementById('sidePanel');
+        const panelOverlay = document.getElementById('panelOverlay');
+
+        function openMenu() {
+            sidePanel.classList.add('active');
+            panelOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeMenuPanel() {
+            sidePanel.classList.remove('active');
+            panelOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuPanel);
+        panelOverlay.addEventListener('click', closeMenuPanel);
+
+        // --- Scroll Fade-In Logic (Intersection Observer) ---
+        const faders = document.querySelectorAll('.fade-in');
+        
+        const appearOptions = {
+            threshold: 0.15, // Trigger when 15% of the element is visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once it fades in
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 </body>
 </html>
