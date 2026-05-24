@@ -1,591 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AM Bathrooms + Projects | Bathroom, Kitchen & Full Interior Renovations Sydney</title>
-<meta name="description" content="AM Bathrooms + Projects designs and builds bathroom, kitchen, laundry and full interior renovations across Sydney. One team, every detail, start to finish. HIA award-winning." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('am')</script>
-<link rel="stylesheet" href="animations.css">
-<style>
-:root{
-  --bg: #f5f2ed;
-  --bg-2: #f8f5f0;
-  --surface: #faf8f4;
-  --surface-alt: #ece6dc;
-  --ink: #1f1d1a;
-  --ink-muted: #6e6862;
-  --ink-faint: #a39c92;
-  --line: #e0d9cc;
-  --line-soft: #ebe5d8;
-  --accent: #5a7a5a;
-  --brass: #7a9a7a;
-  --brass-soft: #9aba9a;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  background:var(--bg);color:var(--ink);
-  font-family:'Inter',system-ui,sans-serif;font-weight:400;line-height:1.6;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-  font-feature-settings:"kern" 1,"liga" 1,"ss01" 1;
-}
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 1 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
-  mix-blend-mode:multiply;
-}
-body > * { position: relative; z-index: 2 }
-a{color:inherit;text-decoration:none}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM Bathrooms + Projects │ Bathroom, Kitchen & Full Interior Renovations Sydney</title>
+    <meta name="description" content="AM Bathrooms + Projects designs and builds bathroom, kitchen, laundry and full interior renovations across Sydney. One team, every detail, start to finish. HIA award-winning.">
+    <style>
+        /* Base Styles & Typography */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #1A1A1A;
+            --text-muted: #5A5A5A;
+            --accent: #D8D8D8;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
-/* Navbar */
-.nav{
-  background:var(--bg);
-  border-bottom:1px solid var(--line);
-  padding:16px 96px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
-.brand .mark{
-  font-family:'Inter',sans-serif;font-weight:300;font-size:34px;letter-spacing:.18em;
-  color:var(--ink);line-height:1;
-}
-.brand .wm{
-  font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;
-  color:var(--ink-muted);margin-top:8px;text-transform:uppercase;
-}
-.hamburger{
-  width:48px;height:48px;border:1px solid var(--line);background:transparent;cursor:pointer;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:2px;
-  transition:all .25s ease-out;
-}
-.hamburger:hover{background:var(--ink);border-color:var(--ink)}
-.hamburger:hover span{background:var(--bg)}
-.hamburger span{display:block;width:18px;height:1px;background:var(--ink);transition:background .25s ease-out}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Hero — full-width with overlay */
-.hero{
-  position:relative;
-  min-height:88vh;
-  display:flex;align-items:center;
-  padding:120px 96px;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse at 25% 30%, rgba(241,235,225,.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(90,122,90,.15) 0%, transparent 60%),
-    linear-gradient(135deg, #b8c4b8 0%, #8a9a88 40%, #5a6e58 100%);
-}
-.hero-bg::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(105deg, rgba(31,29,26,.68) 0%, rgba(31,29,26,.4) 50%, rgba(31,29,26,.15) 100%);
-  z-index:1;
-}
-.hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg, transparent 60%, rgba(31,29,26,.3) 100%);
-  z-index:1;
-}
-.hero-text{position:relative;z-index:2;max-width:640px}
-.hero h1{
-  font-family:'Inter',sans-serif;font-weight:200;letter-spacing:-.035em;
-  font-size:104px;line-height:1.02;color:var(--bg);
-  margin-bottom:40px;
-}
-.hero h1 span{display:block}
-.hero h1 em{font-style:italic;font-weight:200;color:var(--brass-soft)}
-.hero p.sub{
-  font-family:'Inter',sans-serif;font-size:18px;font-weight:400;color:rgba(245,242,237,.75);
-  max-width:500px;margin-bottom:48px;line-height:1.7;
-}
-.cta-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.btn{
-  font-family:'Inter',sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;
-  padding:20px 36px;border-radius:1px;cursor:pointer;transition:all .3s ease-out;
-  text-transform:uppercase;display:inline-flex;align-items:center;gap:14px;
-}
-.btn-primary{background:var(--ink);color:var(--bg);border:1px solid var(--ink)}
-.btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:20px 32px}
-.btn-secondary:hover{background:var(--ink);color:var(--bg)}
-.btn-hero{background:var(--bg);color:var(--ink);border:1px solid var(--bg)}
-.btn-hero:hover{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:translateY(-1px)}
-.btn .arrow{font-size:15px;transition:transform .25s ease-out}
-.btn:hover .arrow{transform:translateX(4px)}
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-weight: 300;
+        }
 
-.hero .photo-label{
-  position:absolute;bottom:28px;left:96px;color:var(--bg);
-  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
-  text-transform:uppercase;opacity:.4;z-index:2;
-}
-.hero .scroll-hint{
-  position:absolute;bottom:32px;right:96px;color:var(--bg);
-  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
-  text-transform:uppercase;opacity:.5;z-index:2;
-  display:flex;align-items:center;gap:12px;
-}
-.hero .scroll-hint::after{content:'';width:24px;height:1px;background:var(--bg);opacity:.5}
+        h1, h2, h3 {
+            font-weight: 400;
+            line-height: 1.2;
+        }
 
-/* Trust bar — rotating flip */
-.trust{
-  background:var(--surface-alt);
-  padding:72px 96px;
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  perspective:1200px;overflow:hidden;
-}
-.trust-flipper{
-  position:relative;
-  transform-style:preserve-3d;
-  transition:transform .8s cubic-bezier(.16,1,.3,1);
-}
-.trust-flipper.flipped{transform:rotateX(180deg)}
-.trust-face{backface-visibility:hidden;background:var(--surface-alt)}
-.trust-front{display:flex;align-items:center;justify-content:center;gap:48px}
-.trust-back{
-  position:absolute;inset:0;transform:rotateX(180deg);
-  display:flex;align-items:center;justify-content:center;
-}
-.awards{display:flex;gap:32px;align-items:center}
-.award-badge{
-  font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:.28em;
-  text-transform:uppercase;color:var(--ink);
-  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
-}
-.award-badge .year{font-family:'Inter',sans-serif;font-weight:200;font-size:28px;letter-spacing:-.02em;color:var(--accent);text-transform:none}
-.divider{width:1px;height:48px;background:var(--line)}
-.trust-rating{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
-.trust-rating .stars{color:var(--brass);letter-spacing:.14em;font-size:18px;font-family:'Inter',sans-serif}
-.trust-rating .rating-text{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink-muted);letter-spacing:.04em}
-.quote{
-  font-family:'Inter',sans-serif;font-style:italic;font-weight:300;font-size:19px;
-  color:var(--ink);line-height:1.6;letter-spacing:-.005em;
-  max-width:700px;text-align:center;padding:0 24px;
-}
-.quote .stars{color:var(--brass);letter-spacing:.14em;font-style:normal;font-size:13px;display:block;margin-bottom:10px}
-.quote .who{display:block;margin-top:14px;font-style:normal;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-muted)}
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+        }
 
-/* How it works */
-.how{padding:144px 96px;background:var(--bg)}
-.how-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:96px;align-items:end}
-.how .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
-  display:flex;align-items:center;gap:16px;
-}
-.how .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
-.how h2{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
-  color:var(--ink);line-height:1;
-}
-.how h2 em{font-style:italic;color:var(--accent);font-weight:200}
-.how p.lead{
-  font-size:17px;color:var(--ink-muted);max-width:480px;line-height:1.7;
-}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:64px}
-.step{position:relative}
-.step .num{
-  font-family:'Inter',sans-serif;font-weight:200;font-style:italic;font-size:84px;
-  color:var(--accent);line-height:1;margin-bottom:32px;letter-spacing:-.04em;
-}
-.step h3{
-  font-family:'Inter',sans-serif;font-size:22px;font-weight:400;margin-bottom:16px;
-  letter-spacing:-.012em;color:var(--ink);
-}
-.step p{color:var(--ink-muted);font-size:15px;line-height:1.7}
-.step:not(:last-child)::after{
-  content:'';position:absolute;top:38px;right:-32px;width:1px;height:48px;background:var(--line);
-}
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
 
-/* Featured Projects */
-.featured{padding:144px 96px;background:var(--bg)}
-.featured-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:80px;align-items:end}
-.featured .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
-  display:flex;align-items:center;gap:16px;
-}
-.featured .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
-.featured h2{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
-  color:var(--ink);line-height:1;
-}
-.featured h2 em{font-style:italic;color:var(--accent);font-weight:200}
-.featured p.lead{font-size:17px;color:var(--ink-muted);max-width:480px;line-height:1.7}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.project-card{cursor:pointer;display:block}
-.project-image{
-  position:relative;overflow:hidden;border-radius:1px;
-  aspect-ratio:3/4;margin-bottom:24px;
-  transition:transform .5s ease-out;
-}
-.project-image.p1{background:
-  radial-gradient(ellipse at 30% 30%, rgba(241,235,225,.35) 0%, transparent 50%),
-  linear-gradient(135deg, #d4c8b8 0%, #b0987a 60%, #8a6f50 100%);
-}
-.project-image.p2{background:
-  radial-gradient(ellipse at 60% 20%, rgba(241,235,225,.3) 0%, transparent 50%),
-  linear-gradient(160deg, #c4bcaf 0%, #998c7a 60%, #6e6356 100%);
-}
-.project-image.p3{background:
-  radial-gradient(ellipse at 40% 40%, rgba(241,235,225,.35) 0%, transparent 50%),
-  linear-gradient(150deg, #cabba8 0%, #a89478 50%, #7a6648 100%);
-}
-.project-image::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg, transparent 55%, rgba(31,29,26,.35) 100%);
-}
-.project-card:hover .project-image{transform:translateY(-8px)}
-.project-meta{
-  font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.32em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:12px;
-}
-.project-name{
-  font-family:'Inter',sans-serif;font-size:24px;font-weight:300;letter-spacing:-.015em;
-  color:var(--ink);transition:color .25s ease-out;line-height:1.3;
-}
-.project-card:hover .project-name{color:var(--accent)}
-.featured-link{margin-top:80px;display:flex;justify-content:flex-end}
-.featured-link a{
-  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.18em;
-  color:var(--ink);text-transform:uppercase;
-  border-bottom:1px solid var(--ink);padding-bottom:6px;
-  display:inline-flex;gap:14px;align-items:center;
-  transition:all .3s ease-out;
-}
-.featured-link a:hover{color:var(--accent);border-color:var(--accent)}
-.featured-link a:hover .arrow{transform:translateX(4px)}
-.featured-link .arrow{transition:transform .25s ease-out}
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--text-main);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
 
-/* Why Pillars */
-.why{padding:144px 96px;background:var(--surface-alt)}
-.why-header{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-bottom:96px;align-items:end}
-.why .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:24px;
-  display:flex;align-items:center;gap:16px;
-}
-.why .section-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
-.why h2{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:68px;letter-spacing:-.03em;
-  color:var(--ink);line-height:1;
-}
-.why h2 em{font-style:italic;color:var(--accent);font-weight:200}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:64px}
-.pillar{position:relative}
-.pillar .quote-mark{
-  font-family:'Inter',sans-serif;font-style:italic;font-weight:200;font-size:80px;
-  color:var(--accent);line-height:.5;margin-bottom:32px;letter-spacing:-.04em;
-  height:32px;
-}
-.pillar h3{
-  font-family:'Inter',sans-serif;font-size:24px;font-weight:300;letter-spacing:-.015em;
-  color:var(--ink);margin-bottom:24px;line-height:1.35;font-style:italic;
-}
-.pillar p{color:var(--ink-muted);font-size:15px;line-height:1.75}
-.pillar:not(:last-child)::after{
-  content:'';position:absolute;top:0;right:-32px;width:1px;height:100%;background:var(--line);
-}
+        .btn:hover {
+            background-color: #333;
+        }
 
-/* Final CTA */
-.cta{background:var(--ink);color:var(--bg);padding:160px 96px;text-align:center}
-.cta-inner{max-width:760px;margin:0 auto}
-.cta .section-eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.36em;
-  color:var(--brass-soft);text-transform:uppercase;margin-bottom:32px;
-  display:flex;align-items:center;justify-content:center;gap:16px;
-}
-.cta .section-eyebrow::before,
-.cta .section-eyebrow::after{content:'';width:32px;height:1px;background:var(--brass-soft)}
-.cta h2{
-  font-family:'Inter',sans-serif;font-weight:200;font-size:76px;letter-spacing:-.03em;
-  color:var(--bg);line-height:1.05;margin-bottom:32px;
-}
-.cta h2 em{font-style:italic;color:var(--brass-soft);font-weight:200}
-.cta p{
-  font-family:'Inter',sans-serif;font-size:18px;color:var(--bg);opacity:.78;
-  max-width:540px;margin:0 auto 56px;line-height:1.7;
-}
-.btn-inverted{background:var(--bg);color:var(--ink);border:1px solid var(--bg)}
-.btn-inverted:hover{background:var(--brass);color:var(--bg);border-color:var(--brass);transform:translateY(-1px)}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+        }
 
-/* Footer */
-.footer{background:var(--bg-2);padding:96px 96px 32px;border-top:1px solid var(--line)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:80px}
-.footer-brand .mark{
-  font-family:'Inter',sans-serif;font-weight:300;font-size:32px;letter-spacing:.18em;
-  color:var(--ink);line-height:1;display:block;
-}
-.footer-brand .wm{
-  font-family:'Inter',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.42em;
-  color:var(--ink-muted);margin-top:8px;text-transform:uppercase;display:block;
-}
-.footer-brand .tag{
-  font-family:'Inter',sans-serif;font-style:italic;font-weight:300;font-size:17px;
-  color:var(--ink);margin-top:32px;max-width:340px;line-height:1.5;
-}
-.footer-col h4{
-  font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.32em;
-  color:var(--ink-muted);text-transform:uppercase;margin-bottom:24px;
-}
-.footer-col a, .footer-col span{
-  font-family:'Inter',sans-serif;font-size:14px;font-weight:400;
-  color:var(--ink);display:block;margin-bottom:12px;
-  transition:color .2s ease-out;
-}
-.footer-col a:hover{color:var(--accent)}
-.footer-col .accent{color:var(--accent);font-weight:500}
-.footer-bottom{
-  border-top:1px solid var(--line);padding-top:32px;
-  display:flex;justify-content:space-between;align-items:center;
-  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;
-  color:var(--ink-muted);text-transform:uppercase;
-}
-.footer-bottom a{color:var(--ink-muted);transition:color .2s ease-out}
-.footer-bottom a:hover{color:var(--accent)}
-.footer-bottom .links{display:flex;gap:24px}
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.label-bar{
-  position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--bg);
-  padding:12px 24px;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;
-  text-align:center;text-transform:uppercase;z-index:99;opacity:.85;
-}
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+        }
 
-@media (max-width: 1100px){
-  .nav, .hero, .trust, .how, .featured, .why, .cta, .footer { padding-left: 32px; padding-right: 32px }
-  .hero { padding: 80px 32px; min-height: 75vh }
-  .hero h1 { font-size: 56px }
-  .hero .photo-label { left: 32px }
-  .hero .scroll-hint { right: 32px }
-  .trust { padding: 40px 32px }
-  .trust-front { flex-direction: column; gap: 24px }
-  .trust-front .divider { display: none }
-  .awards { flex-direction: column; gap: 20px; align-items: center }
-  .award-badge { align-items: center; text-align: center }
-  .trust-rating { align-items: center }
-  .quote { font-size: 16px; padding: 0 16px }
-  .how-header, .featured-header, .why-header { grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px }
-  .how h2, .featured h2, .why h2 { font-size: 44px }
-  .cta h2 { font-size: 48px }
-  .steps { grid-template-columns: 1fr; gap: 56px }
-  .step:not(:last-child)::after { display: none }
-  .project-grid { grid-template-columns: 1fr; gap: 48px }
-  .pillars { grid-template-columns: 1fr; gap: 48px }
-  .pillar:not(:last-child)::after { display: none }
-  .pillar:not(:last-child) { padding-bottom: 48px; border-bottom: 1px solid var(--line) }
-  .featured, .why, .cta { padding-top: 88px; padding-bottom: 88px }
-  .cta p { font-size: 16px }
-  .footer { padding: 64px 32px 24px }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center }
-}
-@media (max-width: 640px){
-  .footer-grid { grid-template-columns: 1fr }
-  .featured-link { justify-content: center; margin-top: 56px }
-}
-</style>
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* Trust Bar (Awards & Quotes) */
+        .trust-bar {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--accent);
+            text-align: center;
+        }
+
+        .awards {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* How It Works */
+        .process {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--text-main);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Featured Projects */
+        .projects {
+            padding: 4rem 0 8rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover img {
+            opacity: 0.9;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Why AM Bathrooms */
+        .why-us {
+            background-color: #EFEFEF;
+            padding: 8rem 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+
+        .why-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-col p {
+            color: var(--text-muted);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 10rem 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-<div class="page-transition"></div>
 
-<header class="nav">
-  <a href="#" class="brand" aria-label="AM Bathrooms and Projects, home">
-    <span class="mark">AM</span>
-    <span class="wm">Bathrooms + Projects</span>
-  </a>
-  <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-</header>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-text">
-    <h1>
-      <span>Beautifully <em>Designed.</em></span>
-      <span>Expertly Managed.</span>
-    </h1>
-    <p class="sub">From beautiful bathrooms and functional kitchens to full interior transformations. A complete design and build service, design led and expertly managed from start to finish.</p>
-    <div class="cta-row">
-      <a href="projects.html" class="btn btn-hero">Explore Our Projects <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="trust">
-  <div class="trust-flipper" id="trustFlipper">
-    <div class="trust-face trust-front">
-      <div class="awards">
-        <div class="award-badge">
-          <span class="year">2025</span>
-          <span>HIA Renovated Kitchen</span>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Beautifully Designed. Expertly Built.</h1>
+            <p>From bathrooms and kitchens to full interior renovations - a complete design and build service, managed from first conversation to final handover.</p>
+            <a href="#projects" class="btn">Explore Our Projects</a>
         </div>
-        <div class="award-badge">
-          <span class="year">2024</span>
-          <span>HIA Renovated Bathroom</span>
+    </section>
+
+    <section class="trust-bar">
+        <div class="container">
+            <div class="awards">
+                HIA Renovated Bathroom of the Year 2024 &nbsp;|&nbsp; 
+                HIA Renovated Kitchen of the Year 2025 &nbsp;|&nbsp; 
+                HIA AUS Small Business Management Award 2023 &nbsp;|&nbsp; 
+                HIA NSW Small Business Management Award 2022
+            </div>
+            <div class="quote">
+                "The process was seamless and stress-free. A team you can trust to get the job done smoothly, headache-free."
+            </div>
         </div>
-        <div class="award-badge">
-          <span class="year">2023</span>
-          <span>HIA Small Business Management</span>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>A process that takes the stress out of renovating.</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h3>1. Discovery</h3>
+                    <p>We visit your home, listen to your brief, and give you a clear, itemised quote.</p>
+                </div>
+                <div class="process-step">
+                    <h3>2. Design & Planning</h3>
+                    <p>We develop the concept, select finishes, and resolve every detail before work begins.</p>
+                </div>
+                <div class="process-step">
+                    <h3>3. Build</h3>
+                    <p>Our team manages trades, scheduling, and site quality. You stay informed without being bothered.</p>
+                </div>
+                <div class="process-step">
+                    <h3>4. Handover</h3>
+                    <p>We walk through the finished space together and make sure everything is exactly right.</p>
+                </div>
+            </div>
         </div>
-        <div class="award-badge">
-          <span class="year">2022</span>
-          <span>HIA Small Business Management</span>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>The work speaks for itself.</h2>
+            </div>
+            <div class="project-grid">
+                <a href="#" class="project-card">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop" alt="Modern Bathroom Renovation">
+                    <h3>Project Name</h3>
+                    <p>[Suburb Name]</p>
+                </a>
+                <a href="#" class="project-card">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="Minimalist Kitchen Renovation">
+                    <h3>Project Name</h3>
+                    <p>[Suburb Name]</p>
+                </a>
+                <a href="#" class="project-card">
+                    <img src="https://images.unsplash.com/photo-1604709177227-3977c3302901?q=80&w=800&auto=format&fit=crop" alt="Full Interior Renovation">
+                    <h3>Project Name</h3>
+                    <p>[Suburb Name]</p>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="divider"></div>
-      <div class="trust-rating">
-        <span class="stars">★★★★★</span>
-        <span class="rating-text">5.0 stars across 30+ reviews</span>
-      </div>
-    </div>
-    <div class="trust-face trust-back">
-      <div class="quote" id="trustQuote">
-        <span class="stars">★★★★★</span>
-        <span class="qt">"The process was seamless and stress-free."</span>
-        <span class="who" style="display:none"></span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="how" id="how">
-  <div class="how-header">
-    <div>
-      <div class="section-eyebrow">The process</div>
-      <h2>How it <em>works.</em></h2>
-    </div>
-    <p class="lead">A process that takes the stress out of renovating.</p>
-  </div>
-  <div class="steps">
-    <div class="step">
-      <div class="num">01</div>
-      <h3>Discovery Consultation</h3>
-      <p>We begin by understanding your lifestyle, goals, vision, and budget. This initial consultation allows us to explore your space and identify opportunities to transform your home.</p>
-    </div>
-    <div class="step">
-      <div class="num">02</div>
-      <h3>Concept Design + Planning</h3>
-      <p>Our design team develops a tailored concept that reflects your personal style while maximising functionality. Every detail is resolved before construction begins.</p>
-    </div>
-    <div class="step">
-      <div class="num">03</div>
-      <h3>Build</h3>
-      <p>Our experienced team coordinates every aspect of the renovation, managing trades, scheduling, site supervision, and quality control with clear communication throughout.</p>
-    </div>
-    <div class="step">
-      <div class="num">04</div>
-      <h3>Completion</h3>
-      <p>We conduct a final walkthrough to ensure everything meets our high standards, and yours.</p>
-    </div>
-  </div>
-</section>
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why clients choose us and stay with us.</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-col">
+                    <h3>One team. Complete project management.</h3>
+                    <p>From the first consultation to final handover, we coordinate everything - trades, scheduling, deliveries, and quality control. You don't need to chase anyone or manage anything. We handle it so you don't have to.</p>
+                </div>
+                <div class="why-col">
+                    <h3>Work that wins awards. For good reason.</h3>
+                    <p>Every finish is deliberate. Every detail considered. Our work has been recognised by the Housing Industry Awards year after year - and our clients see exactly what the judges see.</p>
+                </div>
+                <div class="why-col">
+                    <h3>You'll always know what's happening.</h3>
+                    <p>Clear communication is part of what we deliver. We keep you updated at every stage so there's nothing to chase, nothing to wonder about, and no unwelcome surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="featured">
-  <div class="featured-header">
-    <div>
-      <div class="section-eyebrow">Selected work</div>
-      <h2>The work speaks for <em>itself.</em></h2>
-    </div>
-    <p class="lead">Each project a real home, real people, real results. Click through to see the full story.</p>
-  </div>
-  <div class="project-grid">
-    <a href="projects.html" class="project-card">
-      <div class="project-image p1"></div>
-      <div class="project-meta">Rozelle · Award Winner 2025</div>
-      <div class="project-name">Refined Family Living</div>
-    </a>
-    <a href="projects.html" class="project-card">
-      <div class="project-image p2"></div>
-      <div class="project-meta">Abbotsford · Multi-Space</div>
-      <div class="project-name">Hotel-Inspired Luxury</div>
-    </a>
-    <a href="projects.html" class="project-card">
-      <div class="project-image p3"></div>
-      <div class="project-meta">Pyrmont · Multi-Space</div>
-      <div class="project-name">Elevated City Living</div>
-    </a>
-  </div>
-  <div class="featured-link">
-    <a href="projects.html">See all projects <span class="arrow">→</span></a>
-  </div>
-</section>
+    <section class="final-cta">
+        <div class="container">
+            <h2>Let's talk about your home.</h2>
+            <p>Beautifully designed interiors start with a conversation. Tell us what you're thinking, and we'll take it from there - guiding you through every decision, from first brief to final finish.</p>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+    </section>
 
-<section class="why">
-  <div class="why-header">
-    <div>
-      <div class="section-eyebrow">Why we work this way</div>
-      <h2>Why clients choose us and <em>stay with us.</em></h2>
-    </div>
-  </div>
-  <div class="pillars">
-    <div class="pillar">
-      <div class="quote-mark">"</div>
-      <h3>We manage the whole project.</h3>
-      <p>From the first consultation through to the final handover, we coordinate everything. No chasing trades. No crossed wires. No surprises on site.</p>
-    </div>
-    <div class="pillar">
-      <div class="quote-mark">"</div>
-      <h3>The work is quality you can see.</h3>
-      <p>Every detail is considered. Every finish is deliberate. Year after year, our work is named as a finalist and winner at the Housing Industry Awards (HIA). Our clients notice the same things the judges do.</p>
-    </div>
-    <div class="pillar">
-      <div class="quote-mark">"</div>
-      <h3>You always know what's happening.</h3>
-      <p>We keep you updated at every stage. Our process leads you through every decision, so there's nothing to chase and nothing to worry about. Communication is part of what we deliver.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="cta-inner">
-    <div class="section-eyebrow">Ready when you are</div>
-    <h2>Create Spaces You'll Love <em>Coming Home To.</em></h2>
-    <p>Beautifully designed interiors begin with a thoughtful conversation. Tell us about your vision, and let our team guide you through a renovation experience from concept to completion.</p>
-    <a href="contact.html" class="btn btn-inverted">Start a conversation <span class="arrow">→</span></a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <span class="mark">AM</span>
-      <span class="wm">Bathrooms + Projects</span>
-      <p class="tag">Beautifully designed. Expertly managed.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="awards.html">Awards</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="tel:+61291814776">(02) 9181 4776</a>
-      <a href="mailto:jenny@ambathrooms.com.au">jenny@ambathrooms.com.au</a>
-      <span>Shop 8, 77-105 Victoria Rd, Drummoyne 2047</span>
-    </div>
-    <div class="footer-col">
-      <h4>Follow</h4>
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#" class="accent">★ 5.0 on Google</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 AM Bathrooms + Projects</span>
-    <div class="links">
-      <a href="#">Privacy</a>
-      <a href="#">ABN 51 613 280 149</a>
-    </div>
-  </div>
-</footer>
-
-
-<script src="animations.js"></script>
 </body>
 </html>
